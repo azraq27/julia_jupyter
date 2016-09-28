@@ -4,6 +4,7 @@ FROM julia:latest
 RUN apt-get update && apt-get install -y \
     libzmq-dev bzip2
 
+RUN adduser ubuntu
 USER ubuntu
 
 # Install conda, jupyter, and IJulia kernel
