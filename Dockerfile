@@ -11,6 +11,6 @@ RUN julia -e 'Pkg.update(); Pkg.add("IJulia")'
 
 # Setup environment
 # [TODO]: This assumes Julia v0.5. Would be nice if this was more general
-ENV $PATH:$HOME/.julia/v0.5/Conda/deps/usr/bin
+ENV PATH $PATH:$HOME/.julia/v0.5/Conda/deps/usr/bin
 
 CMD ["jupyter","notebook"]
