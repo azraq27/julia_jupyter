@@ -2,7 +2,7 @@ FROM julia:latest
 
 # Dependencies
 RUN apt-get update && apt-get install -y \
-    make cmake gcc libzmq3-dev bzip2 hdf5-tools
+    make cmake gcc libzmq3-dev bzip2 hdf5-tools unzip
 
 RUN adduser ubuntu
 USER ubuntu
