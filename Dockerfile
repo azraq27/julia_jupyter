@@ -2,7 +2,7 @@ FROM julia:latest
 
 # Dependencies
 RUN apt-get update && apt-get install -y \
-    libzmq-dev bzip2
+    libzmq3-dev bzip2
 
 RUN adduser ubuntu
 USER ubuntu
