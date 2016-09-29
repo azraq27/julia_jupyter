@@ -2,7 +2,7 @@ FROM julia:latest
 
 # Dependencies
 RUN apt-get update && apt-get install -y \
-    make gcc libzmq3-dev bzip2 hdf5-tools
+    make cmake gcc libzmq3-dev bzip2 hdf5-tools
 
 RUN adduser ubuntu
 USER ubuntu
@@ -11,7 +11,7 @@ USER ubuntu
 RUN julia -e 'Pkg.update(); Pkg.add("IJulia")'
 
 # Install some common packages
-RUN julia -e 'for p in ["HDF5","JSON"]; Pkg.add(p); end'
+RUN julia -e 'for p in ["HDF5","JSON","OAuth","Requests","PyCall","PyPlot"]; Pkg.add(p); end'
 
 # Setup environment
 # [TODO]: This assumes Julia v0.5. Would be nice if this was more general
