@@ -4,7 +4,7 @@ FROM julia:latest
 RUN apt-get update && apt-get install -y \
     make cmake gcc libzmq3-dev bzip2 hdf5-tools unzip sudo
 
-RUN adduser ubuntu sudo
+RUN adduser ubuntu && adduser ubuntu sudo
 USER ubuntu
 
 # Install conda, jupyter, and IJulia kernel
